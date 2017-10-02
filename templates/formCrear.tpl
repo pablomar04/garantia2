@@ -6,8 +6,8 @@
     {/if}
     <form action="guardarOrden" method="post">
       <div class="form-group">
-        <label for="Numero">Numero</label>
-        <input type="number" class="form-control" id="numero" name="numero"   placeholder="Numero de orden">
+        <label for="Numero">Numero de orden</label>
+        <input type="number" class="form-control" id="numero" name="numero"   min="111111" max="999999" placeholder="Numero de orden">
       </div>
 
 	  <div class="form-group">
@@ -34,9 +34,13 @@
         <input type="date" id="cierre" name="cierre" >
       </div>
       <div class="form-group">
-        <label for="retiro">Fecha de retiro</label>
-        <input type="date" id="retiro" name="retiro" >
-      </div>            
+        <label for="envio">Fecha de envio</label>
+        <input type="date" id="envio" name="envio" >
+      </div>
+      <div class="form-group">
+        <label for="comentario">Comentario</label>
+        <textarea name="comentario" id="comentario" name="comentario" rows="8" cols="50" placeholder="Comentario"></textarea>
+      </div>          
 
       <button type="submit" class="btn btn-default">Crear</button>
     </form>

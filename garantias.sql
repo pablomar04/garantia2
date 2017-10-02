@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-10-2017 a las 22:30:28
+-- Tiempo de generación: 03-10-2017 a las 01:37:35
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 5.6.28
 
@@ -34,16 +34,27 @@ CREATE TABLE `orden` (
   `chasis` text NOT NULL,
   `fecha_apertura` date NOT NULL,
   `fecha_cierre` date NOT NULL,
-  `fecha_retiro` date NOT NULL,
-  `estado` text NOT NULL
+  `fecha_envio` date NOT NULL,
+  `estado` text NOT NULL,
+  `comentario` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `orden`
 --
 
-INSERT INTO `orden` (`id_orden`, `numero`, `sucursal`, `marca`, `chasis`, `fecha_apertura`, `fecha_cierre`, `fecha_retiro`, `estado`) VALUES
-(1, 111111, 'BALCARCE', 'VW', '8AWDB42H5HT123456', '2017-09-01', '2017-09-01', '2017-09-01', 'PROCESADA');
+INSERT INTO `orden` (`id_orden`, `numero`, `sucursal`, `marca`, `chasis`, `fecha_apertura`, `fecha_cierre`, `fecha_envio`, `estado`, `comentario`) VALUES
+(1, 111111, 'BALCARCE', 'VW', '8AWDB42H5HT123456', '2017-09-01', '2017-09-01', '2017-09-01', 'PROCESADA', ''),
+(2, 123, 'kjk', 'deffefeff', 'kekwek', '2017-10-01', '2017-10-01', '2017-10-01', 'PENDIENTE', ''),
+(3, 222222, 'SALTA', 'VW', '8AWDB45Z6DT123654', '2017-10-01', '2017-10-01', '2017-10-01', 'PENDIENTE', ''),
+(4, 0, '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
+(5, 333333, '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
+(6, 999999, '', '', 'ygtsts', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
+(7, 555555, '', '', 'ghtfghjAAAAAaaaaa', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
+(8, 777777, 'BALCARCE', 'vw', '8AWDB45Z6DT123654', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
+(9, 888888, 'COLON', 'AUDI', 'WAUUABBBBBBBBBBBB', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
+(10, 444444, 'SALTA', 'VW', '8AWDB45Z6DT123654', '2017-10-01', '2017-10-01', '2017-10-01', 'PENDIENTE', ''),
+(11, 111112, 'BALCARCE', 'VW', '8AWDB45Z6DT123654', '2017-10-04', '2017-10-04', '2017-10-04', 'PENDIENTE', 'Comentario');
 
 -- --------------------------------------------------------
 
@@ -92,7 +103,7 @@ ALTER TABLE `reclamos`
 -- AUTO_INCREMENT de la tabla `orden`
 --
 ALTER TABLE `orden`
-  MODIFY `id_orden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_orden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Restricciones para tablas volcadas
 --

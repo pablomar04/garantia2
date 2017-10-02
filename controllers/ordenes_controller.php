@@ -25,23 +25,30 @@
 				isset($_POST['chasis'])&&!empty($_POST['chasis'])&&
 				isset($_POST['apertura'])&&!empty($_POST['apertura'])&&
 				isset($_POST['cierre'])&&!empty($_POST['cierre'])&&
-				isset($_POST['retiro'])&&!empty($_POST['retiro'])
+				isset($_POST['envio'])&&!empty($_POST['envio'])
 				){
 
 				$numero = $_POST['numero'];
-				$sucursal = isset($_POST['sucursal']) ? strtoupper ($_POST['sucursal']) : "DESCONOCIDA";
-				$marca = isset($_POST['marca']) ? strtoupper($_POST['marca']) : "DESCONOCIDA";
-				$chasis = isset($_POST['chasis']) ? strtoupper($_POST['chasis']) : "DESCONOCIDO";
-				$apertura = isset($_POST['apertura']) ? $_POST['apertura'] : "";
-				$cierre = isset($_POST['cierre']) ? $_POST['cierre'] : "";
-				$retiro = isset($_POST['retiro']) ? $_POST['retiro'] : "";
-				$this->model->guardarOrden($numero,$sucursal,$marca,$chasis,$apertura,$cierre,$retiro);
+				$sucursal = strtoupper ($_POST['sucursal']);
+				$marca = strtoupper($_POST['marca']) ;
+				$chasis = strtoupper($_POST['chasis']);
+				$apertura = $_POST['apertura'];
+				$cierre = $_POST['cierre'];
+				$envio = $_POST['envio'] ;
+				$comentario =  isset($_POST['comentario']) ? $_POST['comentario'] : "" ;
+				$this->model->guardarOrden($numero,$sucursal,$marca,$chasis,$apertura,$cierre,$envio,$comentario);
 				header('Location:'.HOME);
 				//$this->view->mostrarOrdenes($this->model->getOrdenes());
 			} else{
 				$this->view->crearError('Faltaron completar datos - Los datos no se grabaron');
 			}	
 
+		}
+
+		function destroy ($params){
+			$id_orden = $params[0];
+			$this->model->borrarOrden($id_orden);
+			header('Location:'.HOME);
 		}
 
 

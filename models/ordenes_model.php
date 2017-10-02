@@ -10,10 +10,16 @@
 			return $sentencia->fetchAll(PDO::FETCH_ASSOC);			
 		}
 
-		function guardarOrden($numero,$sucursal,$marca,$chasis,$apertura,$cierre,$retiro){
-			$sentencia = $this->db->prepare('INSERT INTO orden(numero, sucursal, marca, chasis, fecha_apertura, fecha_cierre, fecha_retiro, estado) VALUES (?,?,?,?,?,?,?,"PENDIENTE")');
-			$sentencia->execute(array($numero,$sucursal,$marca,$chasis,$apertura,$cierre,$retiro));
+		function guardarOrden($numero,$sucursal,$marca,$chasis,$apertura,$cierre,$envio,$comentario){
+			$sentencia = $this->db->prepare('INSERT INTO orden(numero, sucursal, marca, chasis, fecha_apertura, fecha_cierre, fecha_envio, estado, comentario) VALUES (?,?,?,?,?,?,?,"PENDIENTE",?)');
+			$sentencia->execute(array($numero,$sucursal,$marca,$chasis,$apertura,$cierre,$envio,$comentario));
 					
+		}
+
+		function borrarOrden($id_orden){
+			$sentencia = $this->db->prepare('DELETE from orden where id_orden=?');
+			$sentencia->execute(array($id_orden));
+
 		}
 
 

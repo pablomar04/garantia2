@@ -8,7 +8,7 @@
        'agregarOrden'=> 'create',
        'guardarOrden'=> 'store',	
        ''=> 'index',
-       'borrarOrden' => 'borrarOrden',
+       'borrarOrden' => 'destroy',
        
        'ordenes' => 'mostrarOrdenes',
      ];

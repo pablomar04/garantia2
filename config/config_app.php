@@ -5,7 +5,8 @@
      public static $PARAMS = 'params';
      public static $ACTIONS = [
        'home'=> 'index',
-       'agregarOrden'=> 'agregarOrden',
+       'agregarOrden'=> 'create',
+       'guardarOrden'=> 'store',	
        ''=> 'index',
        'borrarOrden' => 'borrarOrden',
        

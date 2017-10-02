@@ -10,6 +10,12 @@
 			return $sentencia->fetchAll(PDO::FETCH_ASSOC);			
 		}
 
+		function guardarOrden($numero,$sucursal,$marca,$chasis,$apertura,$cierre,$retiro){
+			$sentencia = $this->db->prepare('INSERT INTO orden(numero, sucursal, marca, chasis, fecha_apertura, fecha_cierre, fecha_retiro, estado) VALUES (?,?,?,?,?,?,?,"PENDIENTE")');
+			$sentencia->execute(array($numero,$sucursal,$marca,$chasis,$apertura,$cierre,$retiro));
+					
+		}
+
 
 
 	}

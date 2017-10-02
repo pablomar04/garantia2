@@ -7,6 +7,7 @@
 
 		function __construct(){
 			$this->smarty = new Smarty();
+			$this->smarty->assign('titulo','Ordenes MVC');
 		}
 	}
 ?>

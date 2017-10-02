@@ -2,8 +2,8 @@
       <div class="row">
         <div class="col-md-12 ">
           <h1>Lista de Ordenes</h1>
-          <a href="agregarTarea">Agregar Orden</a> | 
-          <a href="palabrasProhibidas">Lista de Palabras Prohibidas</a>
+          <a href="agregarOrden">Agregar Orden</a> | 
+          
           {include file="ordenes.tpl"}
         </div>
       </div>

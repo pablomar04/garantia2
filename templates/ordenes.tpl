@@ -28,7 +28,8 @@
           <td>{$orden['fecha_cierre']}</td>
           <td>{$orden['fecha_envio']}</td>
           <td>{$orden['estado']}</td>
-           <td><a href="borrarOrden/{$orden['id_orden']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>           
+          <td><a href="verOrden/{$orden['id_orden']}"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></td>
+          <td><a href="borrarOrden/{$orden['id_orden']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>           
         </tr>
         {/foreach}
     </tbody>

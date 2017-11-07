@@ -11,6 +11,7 @@
        'borrarOrden' => 'destroy',
        
        'ordenes' => 'mostrarOrdenes',
+       'verOrden' => 'showOrden'
      ];
  
  }

@@ -22,6 +22,13 @@
 
 		}
 
+		function getOrden($id_orden){
+			$sentencia = $this->db->prepare('SELECT numero, sucursal, chasis
+FROM orden o INNER JOIN (SELECT * FROM reclamos where id_orden=? ) r ON o.id_orden = r.id_orden');
+			$sentencia->execute(array($id_orden));
+			return $sentencia->fetchAll(PDO::FETCH_ASSOC);			
+		}
+
 
 
 	}

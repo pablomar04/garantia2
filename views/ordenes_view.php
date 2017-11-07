@@ -19,6 +19,13 @@
   			$this->smarty->display('formCrear.tpl');
   		}
 
+      function showOrden($orden){
+        $this->smarty->assign('orden',$orden);
+        
+        $this->smarty->display('orden.tpl');
+
+      }
+
 		
 
 

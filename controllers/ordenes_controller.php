@@ -51,6 +51,12 @@
 			header('Location:'.HOME);
 		}
 
+		function showOrden($params){
+			$id_orden = $params[0];
+			$this->view->showOrden($this->model->getOrden($id_orden));
+
+		}
+
 
 
 	}

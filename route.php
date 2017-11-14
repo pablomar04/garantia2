@@ -18,6 +18,7 @@ function parseURL($url)
   $arrayReturn[ConfigApp::$PARAMS] = isset($urlExploded[PARAMS]) ? array_slice($urlExploded,1) : null;
   return $arrayReturn;
 }
+
 if(isset($_GET['action'])){
    $urlData = parseURL($_GET['action']);
     $action = $urlData[ConfigApp::$ACTION]; //home

@@ -53,7 +53,8 @@
 
 		function showOrden($params){
 			$id_orden = $params[0];
-			$this->view->showOrden($this->model->getOrden($id_orden));
+			$numero_orden = $this->model->getOrden($id_orden);
+			$this->view->showOrden($id_orden,$numero_orden,$this->model->getOrdenReclamos($id_orden));
 
 		}
 

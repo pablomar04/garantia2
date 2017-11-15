@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-10-2017 a las 01:37:35
+-- Tiempo de generación: 15-11-2017 a las 02:45:08
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 5.6.28
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `orden` (
   `id_orden` int(11) NOT NULL,
-  `numero` int(11) NOT NULL,
+  `numero_orden` int(11) NOT NULL,
   `sucursal` text NOT NULL,
   `marca` text NOT NULL,
   `chasis` text NOT NULL,
@@ -43,28 +43,24 @@ CREATE TABLE `orden` (
 -- Volcado de datos para la tabla `orden`
 --
 
-INSERT INTO `orden` (`id_orden`, `numero`, `sucursal`, `marca`, `chasis`, `fecha_apertura`, `fecha_cierre`, `fecha_envio`, `estado`, `comentario`) VALUES
+INSERT INTO `orden` (`id_orden`, `numero_orden`, `sucursal`, `marca`, `chasis`, `fecha_apertura`, `fecha_cierre`, `fecha_envio`, `estado`, `comentario`) VALUES
 (1, 111111, 'BALCARCE', 'VW', '8AWDB42H5HT123456', '2017-09-01', '2017-09-01', '2017-09-01', 'PROCESADA', ''),
-(2, 123, 'kjk', 'deffefeff', 'kekwek', '2017-10-01', '2017-10-01', '2017-10-01', 'PENDIENTE', ''),
 (3, 222222, 'SALTA', 'VW', '8AWDB45Z6DT123654', '2017-10-01', '2017-10-01', '2017-10-01', 'PENDIENTE', ''),
-(4, 0, '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
-(5, 333333, '', '', '', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
-(6, 999999, '', '', 'ygtsts', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
-(7, 555555, '', '', 'ghtfghjAAAAAaaaaa', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
 (8, 777777, 'BALCARCE', 'vw', '8AWDB45Z6DT123654', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
 (9, 888888, 'COLON', 'AUDI', 'WAUUABBBBBBBBBBBB', '0000-00-00', '0000-00-00', '0000-00-00', 'PENDIENTE', ''),
 (10, 444444, 'SALTA', 'VW', '8AWDB45Z6DT123654', '2017-10-01', '2017-10-01', '2017-10-01', 'PENDIENTE', ''),
-(11, 111112, 'BALCARCE', 'VW', '8AWDB45Z6DT123654', '2017-10-04', '2017-10-04', '2017-10-04', 'PENDIENTE', 'Comentario');
+(11, 111112, 'BALCARCE', 'VW', '8AWDB45Z6DT123654', '2017-10-04', '2017-10-04', '2017-10-04', 'PENDIENTE', 'Comentario'),
+(12, 451278, 'COLON', 'AUDI', 'WAUAG16X5HT756243', '2017-11-14', '2017-11-14', '2017-11-14', 'PENDIENTE', 'Este ordentiene comentario');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `reclamos`
+-- Estructura de tabla para la tabla `reclamo`
 --
 
-CREATE TABLE `reclamos` (
+CREATE TABLE `reclamo` (
   `id_reclamo` int(11) NOT NULL,
-  `id_orden` int(11) NOT NULL,
+  `id_orden_fk` int(11) NOT NULL,
   `numero_reclamo` int(11) NOT NULL,
   `tipo` text NOT NULL,
   `fecha_reclamo` date NOT NULL,
@@ -79,6 +75,14 @@ CREATE TABLE `reclamos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Volcado de datos para la tabla `reclamo`
+--
+
+INSERT INTO `reclamo` (`id_reclamo`, `id_orden_fk`, `numero_reclamo`, `tipo`, `fecha_reclamo`, `estado`, `MO`, `material`, `MO_externa`, `material_externo`, `total`, `lote`, `fecha lote`) VALUES
+(0, 1, 11111101, '1-1m', '0000-00-00', 'ACREDITADO', '100.00', '500.00', '0.00', '0.00', '1500.00', 1234, '0000-00-00'),
+(1, 1, 11111102, '1-1m', '0000-00-00', 'ACREDITADO', '100.00', '500.00', '0.00', '0.00', '1500.00', 1234, '0000-00-00');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -89,11 +93,11 @@ ALTER TABLE `orden`
   ADD PRIMARY KEY (`id_orden`);
 
 --
--- Indices de la tabla `reclamos`
+-- Indices de la tabla `reclamo`
 --
-ALTER TABLE `reclamos`
+ALTER TABLE `reclamo`
   ADD PRIMARY KEY (`id_reclamo`),
-  ADD KEY `id_orden` (`id_orden`);
+  ADD KEY `id_orden` (`id_orden_fk`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -103,16 +107,16 @@ ALTER TABLE `reclamos`
 -- AUTO_INCREMENT de la tabla `orden`
 --
 ALTER TABLE `orden`
-  MODIFY `id_orden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_orden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `reclamos`
+-- Filtros para la tabla `reclamo`
 --
-ALTER TABLE `reclamos`
-  ADD CONSTRAINT `reclamos_ibfk_1` FOREIGN KEY (`id_orden`) REFERENCES `orden` (`id_orden`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `reclamo`
+  ADD CONSTRAINT `reclamo_ibfk_1` FOREIGN KEY (`id_orden_fk`) REFERENCES `orden` (`id_orden`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

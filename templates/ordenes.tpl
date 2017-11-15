@@ -20,7 +20,7 @@
     <tbody>
         {foreach from=$ordenes  item=orden}
         <tr>
-          <td>{$orden['numero']}</td>
+          <td>{$orden['numero_orden']}</td>
           <td>{$orden['sucursal']}</td>
           <td>{$orden['marca']}</td>
           <td>{$orden['chasis']}</td>

@@ -38,7 +38,7 @@
 				$comentario =  isset($_POST['comentario']) ? $_POST['comentario'] : "" ;
 				$this->model->guardarOrden($numero,$sucursal,$marca,$chasis,$apertura,$cierre,$envio,$comentario);
 				header('Location:'.HOME);
-				//$this->view->mostrarOrdenes($this->model->getOrdenes());
+				
 			} else{
 				$this->view->crearError('Faltaron completar datos - Los datos no se grabaron');
 			}	

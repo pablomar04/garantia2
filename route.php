@@ -9,7 +9,7 @@ include_once 'controllers/controller.php';
 
 include_once 'controllers/ordenes_controller.php';
 
-$controller = new OrdenesController();
+
 
 function parseURL($url)
 {
@@ -24,13 +24,14 @@ if(isset($_GET['action'])){
     $action = $urlData[ConfigApp::$ACTION]; //home
     if(array_key_exists($action,ConfigApp::$ACTIONS)){
         $params = $urlData[ConfigApp::$PARAMS];
-
-        $metodo = ConfigApp::$ACTIONS[$action];
+        $action = explode('#',ConfigApp::$ACTIONS[$action]);
+        $controller = new $action[0]();
+        $action = $action[1];
         if(isset($params) &&  $params != null){
-            echo $controller->$metodo($params);
+            echo $controller->$action($params);
         }
         else{
-            echo $controller->$metodo();
+            echo $controller->$action();
         }
     }
 }

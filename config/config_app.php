@@ -4,14 +4,15 @@
      public static $ACTION = 'action';
      public static $PARAMS = 'params';
      public static $ACTIONS = [
-       'home'=> 'index',
-       'agregarOrden'=> 'create',
-       'guardarOrden'=> 'store',	
-       ''=> 'index',
-       'borrarOrden' => 'destroy',
+       'home'=> 'OrdenesController#index',
+       'agregarOrden'=> 'OrdenesController#create',
+       'guardarOrden'=> 'OrdenesController#store',	
+       ''=> 'OrdenesController#index',
+       'borrarOrden' => 'OrdenesController#destroy',
        
-       'ordenes' => 'mostrarOrdenes',
-       'verOrden' => 'showOrden'
+       'ordenes' => 'OrdenesController#mostrarOrdenes',
+       'verOrden' => 'OrdenesController#showOrden'
+       
      ];
  
  }

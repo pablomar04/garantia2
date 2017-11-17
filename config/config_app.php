@@ -9,9 +9,10 @@
        'guardarOrden'=> 'OrdenesController#store',	
        ''=> 'OrdenesController#index',
        'borrarOrden' => 'OrdenesController#destroy',
+       'verOrden' => 'OrdenesController#showOrden',
+       'verReclamos' => 'ReclamosController#index',
+       'agregarReclamo' => 'ReclamosController#create'
        
-       'ordenes' => 'OrdenesController#mostrarOrdenes',
-       'verOrden' => 'OrdenesController#showOrden'
        
      ];
  

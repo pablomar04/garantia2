@@ -22,7 +22,7 @@
   {/foreach}
 {/if}
 
-<a href="agregarReclamo/{$id_orden}">Agregar Reclamo</a><br>
+<a href="../agregarReclamo/{$id_orden}">Agregar Reclamo</a><br>
 <a href="/garantia2">Volver</a>
 
 

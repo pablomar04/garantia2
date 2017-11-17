@@ -11,12 +11,12 @@
   		}
 
   		function mostrarCrearOrdenes(){
-  			$this->smarty->display('formCrear.tpl');
+  			$this->smarty->display('formCrearOrden.tpl');
   		}
 
   		function crearError($error){
   			$this->smarty->assign('error',$error);
-  			$this->smarty->display('formCrear.tpl');
+  			$this->smarty->display('formCrearOrden.tpl');
   		}
 
       function showOrden($id_orden,$numero_orden,$orden){

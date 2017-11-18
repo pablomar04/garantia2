@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2017 a las 02:45:08
+-- Tiempo de generación: 18-11-2017 a las 02:10:29
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 5.6.28
 
@@ -70,7 +70,7 @@ CREATE TABLE `reclamo` (
   `MO_externa` decimal(10,2) DEFAULT NULL,
   `material_externo` decimal(10,2) DEFAULT NULL,
   `total` decimal(10,2) DEFAULT NULL,
-  `lote` int(11) NOT NULL,
+  `lote` varchar(20) NOT NULL,
   `fecha lote` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -79,8 +79,8 @@ CREATE TABLE `reclamo` (
 --
 
 INSERT INTO `reclamo` (`id_reclamo`, `id_orden_fk`, `numero_reclamo`, `tipo`, `fecha_reclamo`, `estado`, `MO`, `material`, `MO_externa`, `material_externo`, `total`, `lote`, `fecha lote`) VALUES
-(0, 1, 11111101, '1-1m', '0000-00-00', 'ACREDITADO', '100.00', '500.00', '0.00', '0.00', '1500.00', 1234, '0000-00-00'),
-(1, 1, 11111102, '1-1m', '0000-00-00', 'ACREDITADO', '100.00', '500.00', '0.00', '0.00', '1500.00', 1234, '0000-00-00');
+(1, 3, 22222201, '1-10', '2017-11-17', 'PENDIENTE', '0.00', '0.00', '0.00', '0.00', '0.00', '', '0000-00-00'),
+(2, 3, 22222202, '7-10', '2017-11-16', 'PENDIENTE', '0.00', '0.00', '0.00', '0.00', '0.00', '', '0000-00-00');
 
 --
 -- Índices para tablas volcadas
@@ -108,6 +108,11 @@ ALTER TABLE `reclamo`
 --
 ALTER TABLE `orden`
   MODIFY `id_orden` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+--
+-- AUTO_INCREMENT de la tabla `reclamo`
+--
+ALTER TABLE `reclamo`
+  MODIFY `id_reclamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Restricciones para tablas volcadas
 --

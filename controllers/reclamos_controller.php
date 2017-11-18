@@ -26,7 +26,28 @@
 		}
 
 		function store(){
-			
+			if (isset($_POST['id_orden'])&&!empty($_POST['id_orden'])&&
+				isset($_POST['numero_orden'])&&!empty($_POST['numero_orden'])&&
+				isset($_POST['version'])&&!empty($_POST['version'])&&
+				isset($_POST['tipo'])&&!empty($_POST['tipo'])&&
+				isset($_POST['fecha_reclamo'])&&!empty($_POST['fecha_reclamo'])&&
+				isset($_POST['estado'])&&!empty($_POST['estado'])
+				){
+				$id_orden = $_POST['id_orden'];
+				$numero_orden = $_POST['numero_orden'];
+				$version =  ($_POST['version']);
+				$numero_reclamo=$numero_orden.$version;
+				$tipo = $_POST['tipo'] ;
+				$fecha_reclamo = $_POST['fecha_reclamo'];
+				$estado = $_POST['estado'];
+
+				$this->model->guardarReclamo($id_orden,$numero_reclamo,$tipo,$fecha_reclamo,$estado);
+				header('Location:'.HOME);
+				
+			} else{
+				$this->view->crearError('Faltaron completar datos - Los datos no se grabaron');
+			}	
+
 		}
 
 		function destroy (){

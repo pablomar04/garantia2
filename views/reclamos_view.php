@@ -17,6 +17,11 @@
         
       }
 
+    function crearError($error){
+        $this->smarty->assign('error',$error);
+        $this->smarty->display('./reclamos/formCrearReclamo.tpl');
+      }
+
 	}
 
 ?>

@@ -11,7 +11,8 @@
        'borrarOrden' => 'OrdenesController#destroy',
        'verOrden' => 'OrdenesController#showOrden',
        'verReclamos' => 'ReclamosController#index',
-       'agregarReclamo' => 'ReclamosController#create'
+       'agregarReclamo' => 'ReclamosController#create',
+       'guardarReclamo' => 'ReclamosController#store'
        
        
      ];

@@ -6,7 +6,7 @@
       <h3 class="panel-title">Reclamo {$reclamo['numero_reclamo']}</h3>
     </div>
     <div class="panel-body">
-      Estado {$reclamo['tipo']} | Estado {$reclamo['estado']} | Lote {$reclamo['lote']}
+      Tipo {$reclamo['tipo']} | Estado {$reclamo['estado']} | Lote {$reclamo['lote']}
     </div>
   </div>
 

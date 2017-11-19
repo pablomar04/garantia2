@@ -12,7 +12,9 @@
        'verOrden' => 'OrdenesController#showOrden',
        'verReclamos' => 'ReclamosController#index',
        'agregarReclamo' => 'ReclamosController#create',
-       'guardarReclamo' => 'ReclamosController#store'
+       'guardarReclamo' => 'ReclamosController#store',
+       'login'=>'LoginController#index',
+       'verificarUsuario'=>'LoginController#verify'
        
        
      ];

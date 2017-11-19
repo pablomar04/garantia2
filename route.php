@@ -6,9 +6,12 @@ include_once 'config/config_app.php';
 include_once 'models/model.php';
 include_once 'views/view.php';
 include_once 'controllers/controller.php';
+include_once 'controllers/secured_controller.php';
 include_once 'controllers/reclamos_controller.php';
 include_once 'controllers/ordenes_controller.php';
 include_once 'controllers/login_controller.php';
+
+
 
 
 

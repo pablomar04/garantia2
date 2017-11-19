@@ -1,14 +1,15 @@
 <?php
-	include_once 'controllers/controller.php';
+	
 	include_once 'views/reclamos_view.php';
 	include_once 'models/reclamos_model.php';
 	include_once 'models/ordenes_model.php';
 
-	class ReclamosController extends Controller{
+	class ReclamosController extends SecuredController{
 
 		private $modelOrden;
 
 		function __construct(){
+			parent::__construct();
 			$this->view = new ReclamosView();
 			$this->model = new ReclamosModel();
 			$this->modelOrden = new OrdenesModel();

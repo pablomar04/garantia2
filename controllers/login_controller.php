@@ -24,11 +24,16 @@
 				$user=$this->model->getUser($userName);
 
 				if(!empty($user) && password_verify($password,$user[0]['password'])){
+					session_start();
+					$_SESSION['usuario']=$userName;
 					header('Location:'.HOME);
-				}else{
+					
+					}else{
 					$this->view->mostrarLogin("Usuario o password no válidos");
 				}
 
+			} else {
+				$this->view->mostrarLogin("El usuario y password son requeridos");
 			}
 		}
 

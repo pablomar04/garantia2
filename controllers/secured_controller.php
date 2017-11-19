@@ -7,12 +7,20 @@ include_once 'controllers/controller.php';
 
 
   function __construct(){
-  		
+  	
   	session_start();
-  	if(!isset($_SESSION['usuario'])){
-  		header('Location:'.LOGIN);
+  	if(isset($_SESSION['usuario'])){
+      if (time() - $_SESSION['LAST_ACTIVITY'] > 600) {   
+  		header('Location:'.LOGOUT); 
   		die();
-  	}
+      }
+      $_SESSION['LAST_ACTIVITY'] = time();
+  	}else{
+      header('Location:'.LOGOUT); 
+      die();
+
+    }
+
   }
 
   }

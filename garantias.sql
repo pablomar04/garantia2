@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-11-2017 a las 02:10:29
+-- Tiempo de generación: 29-11-2017 a las 03:15:34
 -- Versión del servidor: 10.1.19-MariaDB
 -- Versión de PHP: 5.6.28
 
@@ -80,7 +80,30 @@ CREATE TABLE `reclamo` (
 
 INSERT INTO `reclamo` (`id_reclamo`, `id_orden_fk`, `numero_reclamo`, `tipo`, `fecha_reclamo`, `estado`, `MO`, `material`, `MO_externa`, `material_externo`, `total`, `lote`, `fecha lote`) VALUES
 (1, 3, 22222201, '1-10', '2017-11-17', 'PENDIENTE', '0.00', '0.00', '0.00', '0.00', '0.00', '', '0000-00-00'),
-(2, 3, 22222202, '7-10', '2017-11-16', 'PENDIENTE', '0.00', '0.00', '0.00', '0.00', '0.00', '', '0000-00-00');
+(2, 3, 22222202, '7-10', '2017-11-16', 'PENDIENTE', '0.00', '0.00', '0.00', '0.00', '0.00', '', '0000-00-00'),
+(3, 10, 44444401, '1-10', '2017-11-13', 'PENDIENTE', '0.00', '0.00', '0.00', '0.00', '0.00', '', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id_usuario` int(11) NOT NULL,
+  `usuario` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `nombre` varchar(20) NOT NULL,
+  `apellido` varchar(20) NOT NULL,
+  `tipo` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `usuario`, `password`, `nombre`, `apellido`, `tipo`) VALUES
+(1, 'pablomar04', '$2y$10$MmACmS54gES5MgO7SCP5JuoPU6O.lEknMzrLuUHwsHbybbGvpckCK', 'Juan Pablo', 'Marcovecchio', 'Administrador');
 
 --
 -- Índices para tablas volcadas
@@ -100,6 +123,12 @@ ALTER TABLE `reclamo`
   ADD KEY `id_orden` (`id_orden_fk`);
 
 --
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -112,7 +141,12 @@ ALTER TABLE `orden`
 -- AUTO_INCREMENT de la tabla `reclamo`
 --
 ALTER TABLE `reclamo`
-  MODIFY `id_reclamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_reclamo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --

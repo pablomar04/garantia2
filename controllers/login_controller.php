@@ -11,11 +11,12 @@
 		}
 
 		public function index(){
+			
 			$this->view->mostrarLogin();
 		}
 
 		public function verify(){
-			
+
 			$userName = $_POST['usuario'];
 			$password = $_POST['password'];
 
@@ -27,7 +28,7 @@
 					session_start();
 					$_SESSION['usuario']=$userName;
 					$_SESSION['LAST_ACTIVITY']= time();
-					header('Location:'.HOME);					
+					header('Location:'.HOME);
 					}else{
 					$this->view->mostrarLogin("Usuario o password no válidos");
 				}

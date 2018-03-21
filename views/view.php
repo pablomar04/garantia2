@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	include_once 'libs/Smarty.class.php';
 
@@ -8,6 +8,7 @@
 		function __construct(){
 			$this->smarty = new Smarty();
 			$this->smarty->assign('titulo','Ordenes MVC');
+			$this->smarty->clearAllCache();
 		}
 	}
 ?>

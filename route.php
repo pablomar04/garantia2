@@ -11,13 +11,9 @@ include_once 'controllers/reclamos_controller.php';
 include_once 'controllers/ordenes_controller.php';
 include_once 'controllers/login_controller.php';
 
-
-
-
-
 function parseURL($url)
 {
-  $urlExploded = explode('/', $url);
+  $urlExploded = explode('/', trim($url,'/'));
   $arrayReturn[ConfigApp::$ACTION] = $urlExploded[ACTION];
   $arrayReturn[ConfigApp::$PARAMS] = isset($urlExploded[PARAMS]) ? array_slice($urlExploded,1) : null;
   return $arrayReturn;

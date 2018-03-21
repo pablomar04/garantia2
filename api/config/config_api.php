@@ -5,8 +5,8 @@
      public static $PARAMS = 'params';
      public static $METHOD = 'method';
      public static $RESOURCES = [
-       'orden#GET' => 'OrdenesApiController#getOrdenes'
-
+       'orden#GET' => 'OrdenesApiController#getOrdenes',
+       'orden#DELETE' => 'OrdenesApiController#borrarOrden'
 
 
      ];

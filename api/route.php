@@ -1,4 +1,5 @@
 <?php
+
 define('RESOURCE', 0);
 define('PARAMS', 1);
 
@@ -22,7 +23,7 @@ if(isset($_GET['resource'])){
         $params = $urlData[ConfigApi::$PARAMS];
         $controller_method = explode('#',ConfigApi::$RESOURCES[$resource]);
         $controller = new $controller_method[0]();
-        $method = $action[1];
+        $method = $controller_method[1];
         if(!empty($params)){
             echo $controller->$method($params);
         }

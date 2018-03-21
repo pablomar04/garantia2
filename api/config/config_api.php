@@ -6,8 +6,8 @@
      public static $METHOD = 'method';
      public static $RESOURCES = [
        'orden#GET' => 'OrdenesApiController#getOrdenes',
-       'orden#DELETE' => 'OrdenesApiController#borrarOrden'
-
+       'orden#DELETE' => 'OrdenesApiController#borrarOrden',
+       'orden#POST' => 'OrdenesApiController#crearOrden'
 
      ];
 

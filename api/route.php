@@ -20,12 +20,12 @@ if(isset($_GET['resource'])){
    $urlData = parseURL($_GET['resource']);
     $resource = $urlData[ConfigApi::$RESOURCE]; //home
     if(array_key_exists($resource,ConfigApi::$RESOURCES)){
-        $params = $urlData[ConfigApi::$PARAMS];
+        $url_params = $urlData[ConfigApi::$PARAMS];
         $controller_method = explode('#',ConfigApi::$RESOURCES[$resource]);
         $controller = new $controller_method[0]();
         $method = $controller_method[1];
-        if(!empty($params)){
-            echo $controller->$method($params);
+        if(!empty($url_params)){
+            echo $controller->$method($url_params);
         }
         else{
             echo $controller->$method();

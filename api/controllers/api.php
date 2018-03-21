@@ -2,9 +2,10 @@
 abstract class Api {
 
   protected $model;
+  protected $raw_data;
 
   function __construct(){
-
+    $this->raw_data = file_get_contents("php://input");
   }
 
   protected function json_response($data,$status){
@@ -14,7 +15,7 @@ abstract class Api {
   }
 
   private function _requestStatus($code){
-    
+
     $status = array (
       200 => "OK",
       404 => "Not found",

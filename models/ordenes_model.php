@@ -19,6 +19,8 @@
 		public function guardarOrden($numero,$sucursal,$marca,$chasis,$apertura,$cierre,$envio,$comentario){
 			$sentencia = $this->db->prepare('INSERT INTO orden(numero_orden, sucursal, marca, chasis, fecha_apertura, fecha_cierre, fecha_envio, estado, comentario) VALUES (?,?,?,?,?,?,?,"PENDIENTE",?)');
 			$sentencia->execute(array($numero,$sucursal,$marca,$chasis,$apertura,$cierre,$envio,$comentario));
+			$id = $this->db->lastInsertId();
+			return $this->getOrden($id);
 
 		}
 
